@@ -72,6 +72,12 @@
 			<artifactId>mockito-core</artifactId>
 			<version>${mockito.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.github.stefanbirkner</groupId>
+			<artifactId>system-rules</artifactId>
+			<version>1.9.0</version>
+		</dependency>
+		
 
 	</dependencies>
 </project>
