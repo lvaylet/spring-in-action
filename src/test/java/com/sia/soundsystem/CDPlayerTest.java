@@ -1,6 +1,7 @@
 package com.sia.soundsystem;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -16,10 +17,10 @@ public class CDPlayerTest {
 
 	@Rule
 	public final StandardOutputStreamLog log = new StandardOutputStreamLog();
-	
+
 	@Autowired
 	private MediaPlayer player;
-	
+
 	@Autowired
 	private CompactDisc cd;
 
@@ -27,10 +28,12 @@ public class CDPlayerTest {
 	public void cdShouldNotBeNull() {
 		assertNotNull(this.cd);
 	}
-	
+
 	@Test
 	public void play() {
-		player.play();
-		assertEquals("Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles\n", log.getLog());
+		this.player.play();
+		assertEquals(
+				"Playing Sgt. Pepper's Lonely Hearts Club Band by The Beatles\n",
+				this.log.getLog());
 	}
 }
